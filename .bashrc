@@ -56,6 +56,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+
 # Prompt
 BGREEN='\[\033[1;32m\]'
 GREEN='\[\033[0;32m\]'
@@ -72,7 +73,7 @@ WHITE='\[\e[00;37m\]'
 BWHITE='\[\e[01;37m\]'
 
 if [ "$color_prompt" = yes ]; then
-  PS1="\n\u${BOLD}@${RESET}\H:${BOLD}\w${RESET}\n ${BOLD}\\$ ${RESET}"
+  PS1="\n${WHITE}\u${BOLD}${RED}@${RESET}\H:${BOLD}${BGREEN}\w${RESET}\n${RED}\$(__git_ps1)${RESET} ${BOLD}\\$ ${RESET}"
 else
   PS1="\n\u${BOLD}@${RESET}\H:${BOLD}\w${RESET}\n ${BOLD}\\$ ${RESET}"
 fi
