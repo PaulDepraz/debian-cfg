@@ -1,3 +1,6 @@
+# Load in the git branch prompt script.
+source ~/.git-prompt.sh
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -75,7 +78,7 @@ BWHITE='\[\e[01;37m\]'
 if [ "$color_prompt" = yes ]; then
   PS1="\n${WHITE}\u${BOLD}${RED}@${RESET}\H:${BOLD}${BGREEN}\w${RESET}\n${RED}\$(__git_ps1)${RESET} ${BOLD}\\$ ${RESET}"
 else
-  PS1="\n\u${BOLD}@${RESET}\H:${BOLD}\w${RESET}\n ${BOLD}\\$ ${RESET}"
+  PS1="\n${WHITE}\u${BOLD}${RED}@${RESET}\H:${BOLD}${BGREEN}\w${RESET}\n${RED}\$(__git_ps1)${RESET} ${BOLD}\\$ ${RESET}"
 fi
 unset color_prompt force_color_prompt
 
@@ -129,5 +132,4 @@ fi
 git config --global alias.tree "log --oneline --decorate --all --graph"
 git config --global alias.ss3 'log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset) %C(dim white)- %an%C(reset)" --all'
 
-# Load in the git branch prompt script.
-source ~/.git-prompt.sh
+
