@@ -125,3 +125,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+git config --global alias.tree "log --oneline --decorate --all --graph"
+git config --global alias.ss3 'log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset) %C(dim white)- %an%C(reset)" --all'
+
+# Load in the git branch prompt script.
+source ~/.git-prompt.sh
